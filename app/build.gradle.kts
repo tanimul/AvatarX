@@ -1,14 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id ("kotlin-kapt")
 }
 
 android {
-    namespace = "com.example.avatarx"
+    namespace = "com.tanimul.avatarx"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.avatarx"
+        applicationId = "com.tanimul.avatarx"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,6 +34,11 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures{
+        dataBinding = true
+    }
+
 }
 
 dependencies {
@@ -46,5 +52,12 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
 
+    implementation(libs.glide.library)
+    annotationProcessor(libs.glide.compiler)
+    kapt(libs.glide.compiler)
+
+    implementation(project(":AvatarX"))
 }

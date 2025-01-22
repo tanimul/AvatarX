@@ -1,4 +1,4 @@
-package com.example.avatarx
+package com.tanimul.avatarx
 
 import org.junit.Test
 

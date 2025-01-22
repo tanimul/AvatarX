@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AvatarX"
 include(":app")
- 
+include(":AvatarX")

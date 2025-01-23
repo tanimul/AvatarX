@@ -42,3 +42,19 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                // Add dependencies directly
+                from(components["release"])
+
+                // Specify publication information
+                groupId = "com.github.tanimul"
+                artifactId = "AvatarX"
+                version = "1.0.0"
+            }
+        }
+    }
+}

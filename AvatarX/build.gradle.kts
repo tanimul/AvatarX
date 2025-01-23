@@ -1,21 +1,18 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id ("kotlin-kapt")
+    id ("maven-publish")
 }
 
 android {
-    namespace = "com.tanimul.avatarx"
+    namespace = "com.tanimul.avaterx"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.tanimul.avatarx"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,11 +31,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    buildFeatures{
-        dataBinding = true
-    }
-
 }
 
 dependencies {
@@ -46,18 +38,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation(libs.androidx.activity.ktx)
-    implementation(libs.lifecycle.viewmodel.ktx)
-
-    implementation(libs.glide.library)
-    annotationProcessor(libs.glide.compiler)
-    kapt(libs.glide.compiler)
-
-    implementation(project(":AvatarX"))
 }

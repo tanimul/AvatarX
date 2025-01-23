@@ -10,7 +10,6 @@ import com.tanimul.avatarx.databinding.ItemUserBinding
 import com.tanimul.avatarx.domain.model.User
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class UserAdapter(private val viewModel: MainViewModel) :
     ListAdapter<User, UserAdapter.ManagePatientsViewHolder>(DiffCallBack()) {
     class ManagePatientsViewHolder(private val binding: ItemUserBinding) :
@@ -51,7 +50,6 @@ class UserAdapter(private val viewModel: MainViewModel) :
     }
 }
 
-@OptIn(ExperimentalCoroutinesApi::class)
 @BindingAdapter(
     value = ["bindUsers", "bindViewModel"],
     requireAll = true

@@ -1,7 +1,6 @@
 package com.tanimul.avatarx.presentation
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.tanimul.avatarx.databinding.ActivityMainBinding

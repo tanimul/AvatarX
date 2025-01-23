@@ -53,7 +53,7 @@ afterEvaluate {
                 // Specify publication information
                 groupId = "com.github.tanimul"
                 artifactId = "AvatarX"
-                version = "1.0.0"
+                version = "1.0.1"
             }
         }
     }

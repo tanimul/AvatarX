@@ -23,23 +23,25 @@ maven { setUrl("https://jitpack.io") }
 
 Add this in your `build.gradle`
 ```groovy
-implementation 'com.github.tanimul:AvatarX:1.0.1'
+implementation 'com.github.tanimul:AvatarX:1.0.2'
 ```
 
 If you are using `build.gradle.kts`, add the following:
 ```kotlin
-implementation("com.github.tanimul:AvatarX:1.0.1")
+implementation("com.github.tanimul:AvatarX:1.0.2")
 ```
 
 Initializing it with some customization:
 ```kotlin
-AvatarGenerator.AvatarBuilder(context)
-                .setLabel("TANIMUML ISLAM")
-                .setAvatarSize(128)
-                .setTextSize(24)
-                .toCircle()
-                .setBackgroundColor(Color.BLUE)
-                .build()
+GenerateAvatar.AvatarBuilder(context)
+            .setLabel(name)
+            .setAvatarSize(128)
+            .setTextSize(30)
+            .useRandomColor(false)
+            .setColorShade(ColorShade.MEDIUM)
+            .toSquare()
+            .toCircle()
+            .build()
 ```
 
 ### Using Glide or Picasso
@@ -48,30 +50,51 @@ You can use AvatarX as a placeholder in image loading libraries
 Glide:
 ```kotlin
 Glide.with(this)
-    .load("https://example.com/image.jpg")
-    .placeholder(AvatarGenerator.avatarImage(this, 128, AvatarConstants.SQUARE, "TI"))
-    .into(imageView)        
+        .load("https://example.com/image.jpg")
+        .placeholder(
+            GenerateAvatar.AvatarBuilder(context)
+                .setLabel("TI")
+                .setAvatarSize(128)
+                .setTextSize(30)
+                .useRandomColor(false)
+                .setColorShade(ColorShade.MEDIUM)
+                .toSquare()
+                .toCircle()
+                .build())
+        .into(imageView)    
 ```
 
 Picasso:
 ```kotlin
 Picasso.get()
-    .load("https://example.com/image.jpg")
-    .placeholder(AvatarGenerator.avatarImage(this, 128, AvatarConstants.CIRCLE, "TI"))
-    .into(imageView)          
+        .load("https://example.com/image.jpg")
+        .placeholder(
+            GenerateAvatar.AvatarBuilder(context)
+                .setLabel("TI")
+                .setAvatarSize(128)
+                .setTextSize(30)
+                .useRandomColor(false)
+                .setColorShade(ColorShade.MEDIUM)
+                .toSquare()
+                .toCircle()
+                .build())
+        .into(imageView)        
 ```
 
 ### Without Any Library
 Set the generated drawable manually:
 ```kotlin
 imageView.setImageDrawable(
-    AvatarGenerator.avatarImage(
-        this,
-        128,
-        AvatarConstants.CIRCLE,
-        "AvatarX"
-    )
-)
+    imageView.setImageDrawable(
+        GenerateAvatar.AvatarBuilder(context)
+            .setLabel(name)
+            .setAvatarSize(128)
+            .setTextSize(30)
+            .useRandomColor(false)
+            .setColorShade(ColorShade.MEDIUM)
+            .toSquare()
+            .toCircle()
+            .build()))
 ```
 
 ### Shapes Supported

@@ -23,12 +23,12 @@ maven { setUrl("https://jitpack.io") }
 
 Add this in your `build.gradle`
 ```groovy
-implementation 'com.github.tanimul:AvatarX:1.0.2'
+implementation 'com.github.tanimul:AvatarX:1.0.3'
 ```
 
 If you are using `build.gradle.kts`, add the following:
 ```kotlin
-implementation("com.github.tanimul:AvatarX:1.0.2")
+implementation("com.github.tanimul:AvatarX:1.0.3")
 ```
 
 Initializing it with some customization:

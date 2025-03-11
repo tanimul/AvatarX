@@ -85,7 +85,6 @@ Picasso.get()
 Set the generated drawable manually:
 ```kotlin
 imageView.setImageDrawable(
-    imageView.setImageDrawable(
         GenerateAvatar.AvatarBuilder(context)
             .setLabel(name)
             .setAvatarSize(128)
